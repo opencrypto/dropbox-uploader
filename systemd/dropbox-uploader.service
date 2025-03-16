@@ -1,0 +1,14 @@
+[Unit]
+Description=Dropbox Uploader Service
+After=network-online.target
+
+[Service]
+ExecStart=/root/bin/monitor_dir.sh
+User=root
+Group=root
+Restart=always
+RestartSec=3
+Environment="PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
+[Install]
+WantedBy=default.target
